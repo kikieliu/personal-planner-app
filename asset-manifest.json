@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/personal-planner-app/static/css/main.e335c775.css",
+    "main.js": "/personal-planner-app/static/js/main.fc60d1b8.js",
+    "index.html": "/personal-planner-app/index.html",
+    "main.e335c775.css.map": "/personal-planner-app/static/css/main.e335c775.css.map",
+    "main.fc60d1b8.js.map": "/personal-planner-app/static/js/main.fc60d1b8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e335c775.css",
+    "static/js/main.fc60d1b8.js"
+  ]
+}
