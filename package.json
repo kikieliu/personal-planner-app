@@ -12,12 +12,16 @@
     "react-dom": "^19.2.0",
     "react-scripts": "^0.0.0",
     "web-vitals": "^2.1.4"
+    
   },
+  "homepage": "https://kikieliu.github.io/personal-planner-app",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -37,4 +41,5 @@
       "last 1 safari version"
     ]
   }
+  
 }
