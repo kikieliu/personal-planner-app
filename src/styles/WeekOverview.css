@@ -1,6 +1,6 @@
 /* Whole widget container */
 .week-overview {
-  background: #bce2ff; 
+  background: #bce2ff;
   border-radius: 20px;
   padding: 24px;
   box-shadow: 0px 3px 12px rgba(0,0,0,0.1);
@@ -21,9 +21,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-
-  /* makes the date boxes visually longer / taller */
-  min-height: 160px;       /* <-- INCREASE to make taller */
+  min-height: 160px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
@@ -34,20 +32,16 @@
   color: #222;
 }
 
-/* Month/date label */
+/* Day of month (right side) — NO BOX */
 .week-day-date {
   font-size: 13px;
   color: #3b3b3b;
-
-  /* make this area stand out more */
-  background: #eef2ff;
-  padding: 6px 10px;
-  border-radius: 10px;
-
-  /* makes the date *bar* look longer horizontally */
   display: inline-block;
-  width: 100%;  /* full width bar */
-  text-align: center;
+  text-align: right; /* right align in flex container */
+  width: auto;       /* shrink to content */
+  padding: 0;        /* remove padding */
+  background: none;  /* remove background */
+  border-radius: 0;  /* remove rounding */
 }
 
 /* Events container */
@@ -75,6 +69,5 @@
 }
 
 .event-item:hover {
-  background-color: #dcceff; /* or whatever highlight you want */
+  background-color: #dcceff;
 }
-

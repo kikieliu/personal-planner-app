@@ -1,0 +1,164 @@
+.mood-calendar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+               'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+               sans-serif;
+}
+
+.mood-page-title {
+  background-color: #bce2ff;
+  padding: 12px 24px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+
+.mood-calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.mood-month-title {
+  background-color: #bce2ff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  flex: 1;
+  margin: 0 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.mood-calendar-header button {
+  background-color: #bce2ff;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.mood-calendar-header button:hover {
+  background-color: #99d1ff;
+}
+
+.mood-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.mood-weekday-label {
+  font-weight: bold;
+  text-align: center;
+}
+
+.mood-cell {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  min-height: 120px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  background-color: #dcceff;
+  transition: background 0.2s, box-shadow 0.2s;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 16px;
+}
+
+.mood-cell:hover {
+  background-color: #c0b0ff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.mood-day-number {
+  font-weight: bold;
+  font-size: 18px;
+  align-self: flex-start;
+}
+
+.mood-emoji {
+  font-size: 24px;
+  align-self: center;
+}
+
+.mood-cell-empty {
+  background-color: transparent;
+}
+
+/* --------------------------------- */
+/* Modal centered styling */
+/* --------------------------------- */
+.mood-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.mood-modal-content {
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  max-width: 400px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: center;
+}
+
+.mood-modal-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.mood-option-btn {
+  font-size: 24px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.mood-option-btn:hover {
+  background-color: #bce2ff;
+  transform: scale(1.2);
+}
+
+.mood-modal-close {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #f0f0f0;
+  transition: background 0.2s;
+}
+
+.mood-modal-close:hover {
+  background-color: #e0e0e0;
+}

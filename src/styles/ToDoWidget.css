@@ -38,7 +38,7 @@
   font-size: 1em;
   border: none;
   border-radius: 8px;
-  background-color: #dcceff; /* updated color */
+  background-color: #dcceff; /* coordinated color */
   cursor: pointer;
   transition: background 0.3s;
 }
@@ -51,6 +51,9 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column; /* stack tasks vertically */
+  gap: 8px; /* space between tasks */
 }
 
 .task-item {

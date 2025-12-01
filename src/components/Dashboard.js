@@ -11,6 +11,12 @@ import "../styles/Dashboard.css";
 function Dashboard({ events, setEventModal, habits = [], toggleHabitCompletion, moods = {}, setMood }) {
   const handleEventClick = (ev) => setEventModal({ open: true, event: ev });
 
+  const d = new Date();
+  const yyyy = d.getFullYear();
+  const mm = String(d.getMonth() + 1).padStart(2, "0");
+  const dd = String(d.getDate()).padStart(2, "0");
+  const todayKey = `${yyyy}-${mm}-${dd}`;
+
   return React.createElement(
     "div",
     { className: "dashboard-container" },
@@ -21,25 +27,27 @@ function Dashboard({ events, setEventModal, habits = [], toggleHabitCompletion, 
         "div",
         { className: "dashboard-content", key: "content" },
         [
-          // Week overview (title inside the widget)
           React.createElement(
             "div",
             { className: "week-section", key: "week-section" },
             [
+              React.createElement("h2", { key: "week-title" }, "Week Overview"),
               React.createElement(WeekOverview, { key: "weekoverview", events, onEventClick: handleEventClick })
             ]
           ),
 
-          // Today widget
-          React.createElement(TodayWidget, { key: "today" }),
+          React.createElement(
+            "div",
+            { key: "today-widget-wrapper", style: { margin: "10px 0" } },
+            React.createElement(TodayWidget, { key: "today-widget" })
+          ),
 
-          // Widgets row — no extra boxes, just flex alignment
           React.createElement(
             "div",
             { className: "widgets-row", key: "widgets-row" },
             [
               React.createElement(DayOverview, { key: "day", events, onEventClick: handleEventClick }),
-              React.createElement(HabitWidget, { key: "habit", habits, toggleHabitCompletion }),
+              React.createElement(HabitWidget, { key: "habit", habits, toggleHabitCompletion, todayKey }),
               React.createElement(MoodWidget, { key: "mood", moods, setMood }),
               React.createElement(ToDoWidget, { key: "todo" })
             ]

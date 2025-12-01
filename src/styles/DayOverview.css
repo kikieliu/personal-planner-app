@@ -54,7 +54,7 @@
   align-items: center;
 
   /* NEW: purple box */
-  background-color: #dcceff; /* light purple */
-  color: white; /* optional: make text stand out */
+  background-color: white; /* light purple */
+  color: black; /* optional: make text stand out */
 }
 

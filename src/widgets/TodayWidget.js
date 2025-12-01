@@ -11,10 +11,14 @@ function TodayWidget() {
     boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
     textAlign: "center",
     fontWeight: "bold",
-    fontSize: "16px",
+    fontSize: "24px",
   };
 
-  return React.createElement("div", { style: boxStyle }, `Today is ${todayString}!`);
+  return React.createElement(
+    "div",
+    { style: boxStyle },
+    `Today is ${todayString}`
+  );
 }
 
 export default TodayWidget;

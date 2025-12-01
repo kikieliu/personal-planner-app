@@ -14,6 +14,7 @@ const styles = {
     backgroundColor: "#dcceff",
     color: "black",
     textAlign: "center",
+    borderRadius: "12px", // added rounded corners
   },
 };
 

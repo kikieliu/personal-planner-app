@@ -8,15 +8,11 @@ function ToDoWidget() {
   });
 
   const [newTask, setNewTask] = useState("");
-  const [completedCount, setCompletedCount] = useState(() => {
-    const saved = localStorage.getItem("completedCount");
-    return saved ? parseInt(saved, 10) : 0;
-  });
 
+  // Save tasks to localStorage
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
-    localStorage.setItem("completedCount", completedCount.toString());
-  }, [tasks, completedCount]);
+  }, [tasks]);
 
   const handleAddTask = () => {
     const trimmed = newTask.trim();
@@ -26,22 +22,21 @@ function ToDoWidget() {
     setNewTask("");
   };
 
-  const handleCompleteTask = (id) => {
+  const handleToggleTask = (id) => {
     setTasks((prev) =>
       prev.map((task) =>
-        task.id === id ? { ...task, completed: true } : task
+        task.id === id ? { ...task, completed: !task.completed } : task
       )
     );
+  };
 
-    setTimeout(() => {
-      setTasks((prev) => prev.filter((task) => task.id !== id));
-      setCompletedCount((count) => count + 1);
-    }, 500);
+  const handleDeleteTask = (id) => {
+    setTasks((prev) => prev.filter((task) => task.id !== id));
   };
 
   return React.createElement(
     "div",
-    { className: "tasks-tab", key: "todo-widget" },  // ← CSS now works
+    { className: "tasks-tab", key: "todo-widget" },
     [
       React.createElement("h2", { key: "title" }, "To-Do List"),
 
@@ -71,31 +66,44 @@ function ToDoWidget() {
         tasks.map((task) =>
           React.createElement(
             "li",
-            {
-              key: task.id,
-              className: `task-item ${task.completed ? "completed" : ""}`,
-            },
+            { key: task.id, className: "task-item" },
             [
               React.createElement("input", {
                 key: "checkbox",
                 type: "checkbox",
                 checked: task.completed,
-                onChange: () => handleCompleteTask(task.id),
+                onChange: () => handleToggleTask(task.id),
               }),
               React.createElement(
                 "span",
-                { className: "task-name", key: "name" },
+                {
+                  className: "task-name",
+                  key: "name",
+                  style: {
+                    textDecoration: task.completed ? "line-through" : "none",
+                    color: task.completed ? "#666" : "#000",
+                  },
+                },
                 task.name
+              ),
+              React.createElement(
+                "button",
+                {
+                  key: "delete",
+                  onClick: () => handleDeleteTask(task.id),
+                  style: {
+                    marginLeft: "auto",
+                    background: "transparent",
+                    border: "none",
+                    color: "#4b8ccf",
+                    cursor: "pointer",
+                  },
+                },
+                "Delete"
               ),
             ]
           )
         )
-      ),
-
-      React.createElement(
-        "div",
-        { className: "tasks-footer", key: "footer" },
-        "Tasks completed: " + completedCount
       ),
     ]
   );
