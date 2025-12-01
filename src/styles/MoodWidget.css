@@ -1,0 +1,38 @@
+.mood-widget {
+  background-color: #bce2ff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.mood-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.mood-btn {
+  font-size: 20px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mood-btn:hover {
+  border-color: #4CAF50;
+  background: #e8f5e9;
+}
+
+.mood-btn.selected {
+  border: 2px solid #4CAF50;
+  background: #e8f5e9;
+}
+
+.current-mood {
+  margin-top: 8px;
+  color: #555;
+}

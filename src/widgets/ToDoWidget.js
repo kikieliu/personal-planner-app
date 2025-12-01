@@ -1,8 +1,7 @@
-// components/TasksTab.js
 import React, { useState, useEffect } from "react";
-import '../styles/ToDoWidget.css'
+import '../styles/ToDoWidget.css';
 
-function TasksTab() {
+function ToDoWidget() {
   const [tasks, setTasks] = useState(() => {
     const saved = localStorage.getItem("tasks");
     return saved ? JSON.parse(saved) : [];
@@ -42,9 +41,10 @@ function TasksTab() {
 
   return React.createElement(
     "div",
-    { className: "tasks-tab" },
+    { className: "tasks-tab", key: "todo-widget" },  // ← CSS now works
     [
-      // Add task input
+      React.createElement("h2", { key: "title" }, "To-Do List"),
+
       React.createElement(
         "div",
         { className: "add-task", key: "add-task" },
@@ -65,7 +65,6 @@ function TasksTab() {
         ]
       ),
 
-      // Task list
       React.createElement(
         "ul",
         { className: "task-list", key: "list" },
@@ -93,7 +92,6 @@ function TasksTab() {
         )
       ),
 
-      // Footer
       React.createElement(
         "div",
         { className: "tasks-footer", key: "footer" },
@@ -103,4 +101,4 @@ function TasksTab() {
   );
 }
 
-export default TasksTab;
+export default ToDoWidget;

@@ -1,7 +1,16 @@
+/* styles/ToDoWidget.css */
+
 .tasks-tab {
-  max-width: 400px;
-  margin: 20px auto;
-  font-family: sans-serif;
+  margin: 0;
+  max-width: none;
+  background: #bce2ff;
+  border-radius: 12px;
+  padding: 20px; 
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 300px;
 }
 
 .add-task {
@@ -12,13 +21,30 @@
 
 .add-task input {
   flex: 1;
-  padding: 6px 8px;
+  padding: 8px 12px;
   font-size: 1em;
+  border-radius: 8px;
+  border: 1px solid #dcceff;
+  background: white;
+}
+
+.add-task input:focus {
+  outline: none;
+  border-color: #dcceff;
 }
 
 .add-task button {
-  padding: 6px 12px;
+  padding: 8px 16px;
   font-size: 1em;
+  border: none;
+  border-radius: 8px;
+  background-color: #dcceff; /* updated color */
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.add-task button:hover {
+  background-color: #bce2ff; /* slightly lighter on hover */
 }
 
 .task-list {
@@ -31,8 +57,10 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 0;
+  padding: 6px 10px;
   transition: opacity 0.5s ease;
+  background: white;
+  border-radius: 8px;
 }
 
 .task-item.completed {
@@ -43,8 +71,18 @@
   flex: 1;
 }
 
+/* Changed delete button from red to a coordinated blue */
+.task-item button {
+  font-size: 16px;
+  color: #4b8ccf; /* harmonious with #bce2ff */
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
 .tasks-footer {
   margin-top: 16px;
   font-weight: bold;
   text-align: center;
+  color: #333;
 }

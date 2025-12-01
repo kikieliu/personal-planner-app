@@ -1,0 +1,20 @@
+.habit-widget {
+  background-color: #bce2ff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.habit-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 4px 0;
+}
+
+.habit-streak {
+  margin-left: auto;
+  font-size: 0.9em;
+  color: #555;
+}
