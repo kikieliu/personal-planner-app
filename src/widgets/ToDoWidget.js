@@ -1,6 +1,6 @@
 // components/TasksTab.js
 import React, { useState, useEffect } from "react";
-import "./TasksTab.css";
+import '../styles/ToDoWidget.css'
 
 function TasksTab() {
   const [tasks, setTasks] = useState(() => {

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Dashboard from "./components/Dashboard";
 import Calendar from "./components/Calendar";
-import EventModal from "./components/EventModal";
+import EventModal from "./widgets/EventModal";
 import HabitsPage from "./components/HabitsPage";
 import MoodPage from "./components/MoodPage";
 
