@@ -1,7 +1,7 @@
 import React from "react";
 
 function Navbar({ selectedTab, setSelectedTab, onAddEvent }) {
-  const tabs = ["Dashboard", "Habits", "Mood", "Calendar"];
+  const tabs = ["Dashboard", "Calendar", "Habits", "Mood"];
 
   return React.createElement(
     "nav",
