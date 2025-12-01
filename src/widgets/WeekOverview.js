@@ -1,21 +1,22 @@
 import React, { useState } from "react";
 import "../styles/WeekOverview.css";
 
+// Converts 24-hour time (HH:MM) to 12-hour format with AM/PM
 function formatTime(time24) {
   if (!time24) return "";
   const [hourStr, minute] = time24.split(":");
   let hour = parseInt(hourStr, 10);
   const ampm = hour >= 12 ? "PM" : "AM";
-  hour = hour % 12 || 12;
+  hour = hour % 12 || 12; // convert 0 -> 12
   return `${hour}:${minute} ${ampm}`;
 }
 
-// Returns a PST Date object for today
+// Returns a Date object for today in PST
 function getPSTToday() {
   return new Date(new Date().toLocaleString("en-US", { timeZone: "America/Los_Angeles" }));
 }
 
-// Returns a YYYY-MM-DD string in PST
+// Returns a string key YYYY-MM-DD for a date in PST
 function getPSTKey(date = new Date()) {
   const pst = new Date(date.toLocaleString("en-US", { timeZone: "America/Los_Angeles" }));
   const yyyy = pst.getFullYear();
@@ -28,9 +29,11 @@ export default function WeekOverview({ events = [], onEventClick }) {
   const today = getPSTToday();
   const todayKey = getPSTKey(today);
 
+  // Compute the start of the week (Sunday)
   const startOfWeek = new Date(today);
-  startOfWeek.setDate(today.getDate() - today.getDay()); // Sunday as start
+  startOfWeek.setDate(today.getDate() - today.getDay());
 
+  // Build an array of 7 days for the week
   const days = Array.from({ length: 7 }).map((_, i) => {
     const d = new Date(startOfWeek);
     d.setDate(startOfWeek.getDate() + i);
@@ -43,9 +46,11 @@ export default function WeekOverview({ events = [], onEventClick }) {
     days.map((date) => {
       const dateKey = getPSTKey(date);
 
+      // Filter events for this day and sort them
       const dayEvents = events
         .filter((ev) => ev.date === dateKey)
         .sort((a, b) => {
+          // all-day events first
           if (a.allDay && !b.allDay) return -1;
           if (!a.allDay && b.allDay) return 1;
           if (!a.time) return 1;
@@ -59,14 +64,10 @@ export default function WeekOverview({ events = [], onEventClick }) {
         "div",
         { key: dateKey, className: `week-day${isToday ? " today" : ""}` },
         [
-          // Header: weekday left, day number right
+          // Day header with short weekday name and day number
           React.createElement(
             "div",
-            {
-              key: "header",
-              className: "week-day-header",
-              style: { display: "flex", justifyContent: "space-between", alignItems: "center" }
-            },
+            { key: "header", className: "week-day-header", style: { display: "flex", justifyContent: "space-between", alignItems: "center" } },
             [
               React.createElement(
                 "div",
@@ -96,6 +97,7 @@ export default function WeekOverview({ events = [], onEventClick }) {
   );
 }
 
+// Individual event component with hover effect
 function HoverEvent({ ev, onEventClick }) {
   const [hover, setHover] = useState(false);
 

@@ -1,4 +1,3 @@
-/* Calendar.css */
 .calendar-container {
   display: flex;
   flex-direction: column;
@@ -9,7 +8,6 @@
                sans-serif;
 }
 
-/* Page title */
 .calendar-page-title {
   background-color: #bce2ff;
   padding: 12px 24px;
@@ -68,22 +66,20 @@
 .calendar-cell {
   border: 1px solid #ccc;
   border-radius: 10px;
-  min-height: 120px; /* taller boxes */
+  min-height: 120px; 
   padding: 10px;
   display: flex;
   flex-direction: column;
   gap: 4px;
   cursor: pointer;
-  background-color: #dcceff; /* purple background */
+  background-color: #dcceff; 
   transition: background 0.2s, box-shadow 0.2s;
-
-  /* left-align content */
-  justify-content: flex-start;  /* align top */
-  align-items: flex-start;      /* align left */
+  justify-content: flex-start;  
+  align-items: flex-start;      
 }
 
 .calendar-cell:hover {
-  background-color: #bcb0ff; /* lighter purple on hover */
+  background-color: #bcb0ff; 
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
@@ -93,14 +89,14 @@
 }
 
 .calendar-event {
-  font-size: 14px; /* bigger event text */
+  font-size: 14px; 
   padding: 2px 4px;
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.2s;
 
-  text-align: left;  /* left-align text */
-  width: 100%;       /* take full cell width */
+  text-align: left;  
+  width: 100%;      
 }
 
 .calendar-event:hover {

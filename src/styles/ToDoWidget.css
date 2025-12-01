@@ -1,5 +1,3 @@
-/* styles/ToDoWidget.css */
-
 .tasks-tab {
   margin: 0;
   max-width: none;
@@ -38,13 +36,13 @@
   font-size: 1em;
   border: none;
   border-radius: 8px;
-  background-color: #dcceff; /* coordinated color */
+  background-color: #dcceff; 
   cursor: pointer;
   transition: background 0.3s;
 }
 
 .add-task button:hover {
-  background-color: #bce2ff; /* slightly lighter on hover */
+  background-color: #bce2ff; 
 }
 
 .task-list {
@@ -52,8 +50,8 @@
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column; /* stack tasks vertically */
-  gap: 8px; /* space between tasks */
+  flex-direction: column; 
+  gap: 8px; 
 }
 
 .task-item {
@@ -74,10 +72,9 @@
   flex: 1;
 }
 
-/* Changed delete button from red to a coordinated blue */
 .task-item button {
   font-size: 16px;
-  color: #4b8ccf; /* harmonious with #bce2ff */
+  color: #4b8ccf; 
   border: none;
   background: transparent;
   cursor: pointer;

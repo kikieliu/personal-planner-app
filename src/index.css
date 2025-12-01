@@ -1,6 +1,3 @@
-/* ========================
-   Global Reset & Box Sizing
-   ======================== */
 *,
 *::before,
 *::after {
@@ -9,9 +6,6 @@
   padding: 0;
 }
 
-/* ========================
-   Body / Base Fonts
-   ======================== */
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -24,9 +18,6 @@ body {
   background-color: #f9f9f9;
 }
 
-/* ========================
-   Headings
-   ======================== */
 h1, h2, h3, h4, h5, h6 {
   font-family: inherit;
   font-weight: 500;
@@ -34,9 +25,6 @@ h1, h2, h3, h4, h5, h6 {
   color: #111;
 }
 
-/* ========================
-   Text & Code
-   ======================== */
 p, span, a, li, label {
   font-family: inherit;
   font-weight: 400;
@@ -46,49 +34,31 @@ code, pre {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-/* ========================
-   Form Elements
-   ======================== */
 input, button, select, textarea {
   font-family: inherit;
   font-size: inherit;
 }
 
-/* ========================
-   Buttons
-   ======================== */
 button {
   cursor: pointer;
   border: none;
   background: none;
 }
 
-/* ========================
-   Links
-   ======================== */
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* ========================
-   Lists
-   ======================== */
 ul, ol {
   list-style: none;
 }
 
-/* ========================
-   Images
-   ======================== */
 img {
   max-width: 100%;
   display: block;
 }
 
-/* ========================
-   Utility classes (optional)
-   ======================== */
 .text-center { text-align: center; }
 .flex { display: flex; }
 .flex-column { display: flex; flex-direction: column; }
