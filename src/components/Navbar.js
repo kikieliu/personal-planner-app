@@ -10,7 +10,7 @@ function Navbar({ selectedTab, setSelectedTab, onAddEvent }) {
     {
       // Inline styles for fixed sidebar
       style: {
-        width: "200px",           // fixed width
+        width: "150px",           // fixed width
         height: "100vh",          // full viewport height
         position: "fixed",        // stay fixed on screen
         left: 0,                  // align left

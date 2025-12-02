@@ -203,7 +203,7 @@ function App() {
         "div",
         {
           key: "content-wrapper",
-          style: { flex: 1, marginLeft: "200px", overflowY: "auto", padding: "20px" },
+          style: { flex: 1, marginLeft: "150px", overflowY: "auto", padding: "20px" },
         },
         renderContent()
       ),
